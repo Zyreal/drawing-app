@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+canvas { /*types dont need "." like body*/
+    border: 2px solid steelblue;
+}
+
+.toolbox {
+    background-color: steelblue;
+    border: 1px solid slateblue;
+    display: flex;
+    width: 804px; /*size of the canvas (includes width + border width)*/
+    padding: 1rem; /*root em (font size of html element as opposed to em which is own element)*/
+}
+
+.toolbox > * { /*selects all classes directly underneath toolbox but any lower (and pretty sure not toolbox itself as well)*/
+    background-color: #fff;
+    border: none;
+    display: inline-flex; /*pree sure separates all the entities*/
+    align-items: center; /*puts all items in the middle of their buttons*/
+    justify-content: center;
+    font-size: 2rem;
+    height: 50px;
+    width: 50px;
+    margin: 0.25rem; /*spaces between buttons*/
+    padding: 0.25rem; /*spaces within the buttons*/
+    cursor: pointer;
+}
+
+.toolbox > *:last-child { /*select all classes underneath except for last child (X) inclusive:exclusive[)*/
+    margin-left: auto;
+}
+
+input[type='range'] { /*only selects input with type of range (can also do #range)*/
+    width: 300px;
+    -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    background: steelblue;
+    border-radius: 4px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+}
+  
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid steelblue;
+    margin-top: -7px;
+    cursor: pointer;
+}
+
+input[type='text'] {
+    width: 65px;
+    text-align: center;
+}
